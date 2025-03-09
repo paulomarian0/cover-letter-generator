@@ -41,11 +41,17 @@ const LandingPage = () => {
 
 			<main className="flex flex-col items-center justify-evenly flex-grow bg-white">
 				<div className="flex flex-col items-center w-full max-w-4xl animate-fade-slide-up">
-					<h1 className="text-4xl font-bold mb-4 text-center">Craft Your Perfect Cover Letter in Minutes</h1>
+					<h1 className="text-4xl font-bold mb-4 text-center">
+						Create Your Perfect <span className="text-[#2500f5] font-bold">Cover Letter </span>
+						in <span className="text-[#5664f5] font-bold">Seconds</span>
+					</h1>
 
-					<p className="text-lg mb-8 text-center">Turn your resume into a professional cover letter quickly and for free! We’ll help you make a lasting impression and stand out to employers.</p>
+					<p className="text-xl mb-8 mt-2 text-center">
+						Upload your resume in PDF format and we'll quickly generate a professional cover letter for you, completely <span className="text-[#2500f5] font-bold text-xl animate-pulse">FREE</span>!
+						Make a lasting impression and stand out to employers.
+					</p>
 
-					<Button variant="default" className="p-5 bg-[#5664f5] hover:bg-[#4b55e8] cursor-pointer text-white font-bold">
+					<Button variant="default" className="p-6 bg-[#5664f5] hover:bg-[#4b55e8] cursor-pointer text-lg text-white font-bold">
 						Get Started
 					</Button>
 				</div>

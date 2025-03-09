@@ -118,10 +118,22 @@
   --animate-add-shadow: add-shadow 1.5s ease-in-out forwards;
   --animate-rotate-border: rotate-border 1.5s linear infinite;
   --animate-rotate-border: border-rotate 3s linear infinite;
+  --animate-fade-slide-up: fade-slide-up 1.5s ease-out forwards;
 
   @keyframes border-rotate {
     to {
       --border-angle: 360deg;
+    }
+  }
+
+  @keyframes fade-slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(12px);
+    },
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
