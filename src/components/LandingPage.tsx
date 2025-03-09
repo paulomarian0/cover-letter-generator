@@ -4,27 +4,27 @@ import { Button } from "./ui/button";
 
 const LandingPage = () => {
 	return (
-		<section className="flex flex-col h-screen">
-			<header className="flex justify-between items-center w-full mb-1 p-4 shadow-md shadow-gray-200">
+		<section className="flex flex-col h-screen pb-3 bg-[#f3f3f8]">
+			<header className="flex justify-between items-center w-full mb-1 p-4 shadow-md animate-add-shadow">
 				<span className="flex items-center">
 					<ScrollText color="#5664f5" size={45} />
 					<h1 className="text-2xl font-bold ml-2">Cover Letter Generator</h1>
 				</span>
 			</header>
 
-			<main className="flex flex-col items-center p-6 justify-evenly flex-grow">
-				<div className="flex flex-col items-center p-8 w-full max-w-4xl">
+			<main className="flex flex-col items-center justify-evenly flex-grow bg-white">
+				<div className="flex flex-col items-center w-full max-w-4xl animate-fade-slide-up">
 					<h1 className="text-4xl font-bold mb-4 text-center">Create Your Perfect Cover Letter</h1>
 
 					<p className="text-lg mb-8 text-center">Transform your CV into a professional cover letter in minutes, completely free! Let us help you make the best impression possible.</p>
 
-					<Button variant="default" className="p-5 bg-[#5664f5] hover:bg-[#4b59e8] text-white font-bold">
+					<Button variant="default" className="p-5 bg-[#5664f5] hover:bg-[#4b55e8] cursor-pointer text-white font-bold">
 						Get Started
 					</Button>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-4xl">
-					<Card>
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-4xl animate-fade-slide-up">
+					<Card className="border-[#5664f5] border-2">
 						<CardContent>
 							<img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="Alex Johnson" className="w-16 h-16 rounded-full mx-auto mb-4" />
 							<p className="text-center pb-2">"A game changer! My cover letter has never looked so good."</p>
@@ -32,7 +32,7 @@ const LandingPage = () => {
 						</CardContent>
 					</Card>
 
-					<Card>
+					<Card className="border-[#5664f5] border-2">
 						<CardContent>
 							<img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="Linda Smith" className="w-16 h-16 rounded-full mx-auto mb-4" />
 							<p className="text-center pb-2">"Quick and easy! Got my dream job with the help of this app."</p>
@@ -40,7 +40,7 @@ const LandingPage = () => {
 						</CardContent>
 					</Card>
 
-					<Card>
+					<Card className="border-[#5664f5] border-2">
 						<CardContent>
 							<img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="Michael Brown" className="w-16 h-16 rounded-full mx-auto mb-4" />
 							<p className="text-center pb-2">"Highly recommend! Professional results every time."</p>
@@ -50,7 +50,7 @@ const LandingPage = () => {
 				</div>
 			</main>
 
-			<footer className="flex flex-col justify-center items-center w-full p-2 bg-[#f0f1ff] text-[#101010]">
+			<footer className="flex flex-col justify-center items-center w-full p-2 text-[#101010] animate-fade-slide-up">
 				<div className="flex gap-4 mb-4">
 					<a target="_blank" href="mailto:paulomariano2501@gmail.com" className="text-center" rel="noreferrer">
 						<MailIcon />
@@ -62,7 +62,9 @@ const LandingPage = () => {
 						<Linkedin />
 					</a>
 				</div>
-				<p>Made with ❤️ by Paulo Mariano</p>
+				<p>
+					Made with <span className="animate-pulse duration-3000">❤️</span> by Paulo Mariano
+				</p>
 				<p className="text-center">&copy; {new Date().getFullYear()} Cover Letter Generator</p>
 			</footer>
 		</section>
