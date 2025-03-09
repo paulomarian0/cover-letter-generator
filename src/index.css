@@ -117,6 +117,13 @@
   --animate-fade-slide-up: fade-slide-up 1.5s ease-out forwards;
   --animate-add-shadow: add-shadow 1.5s ease-in-out forwards;
   --animate-rotate-border: rotate-border 1.5s linear infinite;
+  --animate-rotate-border: border-rotate 3s linear infinite;
+
+  @keyframes border-rotate {
+    to {
+      --border-angle: 360deg;
+    }
+  }
 
   @keyframes add-shadow {
     0% {
@@ -161,3 +168,11 @@
     font-family: "Inter", sans-serif;
   }
 }
+
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
+
+
