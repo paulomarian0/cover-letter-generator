@@ -1,23 +1,24 @@
-import { FileTerminal, Linkedin, Github, MailIcon } from "lucide-react";
+import { Linkedin, Github, MailIcon, ScrollText } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 
 const LandingPage = () => {
 	return (
-		<section>
-			<header className="flex justify-between items-center w-full mb-4 p-4 shadow-md shadow-gray-200 bg-amber-200">
+		<section className="flex flex-col h-screen">
+			<header className="flex justify-between items-center w-full mb-1 p-4 shadow-md shadow-gray-200">
 				<span className="flex items-center">
-					<FileTerminal color="#5664f5" size={45} />
+					<ScrollText color="#5664f5" size={45} />
 					<h1 className="text-2xl font-bold ml-2">Cover Letter Generator</h1>
 				</span>
 			</header>
-			<main className="flex flex-col items-center p-6 bg-amber-600 justify-between">
+
+			<main className="flex flex-col items-center p-6 justify-evenly flex-grow">
 				<div className="flex flex-col items-center p-8 w-full max-w-4xl">
 					<h1 className="text-4xl font-bold mb-4 text-center">Create Your Perfect Cover Letter</h1>
 
 					<p className="text-lg mb-8 text-center">Transform your CV into a professional cover letter in minutes, completely free! Let us help you make the best impression possible.</p>
 
-					<Button variant="default" className="p-5 bg-[#5664f5]">
+					<Button variant="default" className="p-5 bg-[#5664f5] hover:bg-[#4b59e8] text-white font-bold">
 						Get Started
 					</Button>
 				</div>
@@ -26,7 +27,7 @@ const LandingPage = () => {
 					<Card>
 						<CardContent>
 							<img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="Alex Johnson" className="w-16 h-16 rounded-full mx-auto mb-4" />
-							<p className="text-center">"A game changer! My cover letter has never looked so good."</p>
+							<p className="text-center pb-2">"A game changer! My cover letter has never looked so good."</p>
 							<p className="font-semibold text-center">- Alex Johnson, Marketing Specialist</p>
 						</CardContent>
 					</Card>
@@ -34,7 +35,7 @@ const LandingPage = () => {
 					<Card>
 						<CardContent>
 							<img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="Linda Smith" className="w-16 h-16 rounded-full mx-auto mb-4" />
-							<p className="text-center">"Quick and easy! Got my dream job with the help of this app."</p>
+							<p className="text-center pb-2">"Quick and easy! Got my dream job with the help of this app."</p>
 							<p className="font-semibold text-center">- Linda Smith, Software Engineer</p>
 						</CardContent>
 					</Card>
@@ -42,14 +43,14 @@ const LandingPage = () => {
 					<Card>
 						<CardContent>
 							<img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="Michael Brown" className="w-16 h-16 rounded-full mx-auto mb-4" />
-							<p className="text-center">"Highly recommend! Professional results every time."</p>
+							<p className="text-center pb-2">"Highly recommend! Professional results every time."</p>
 							<p className="font-semibold text-center">- Michael Brown, HR Manager</p>
 						</CardContent>
 					</Card>
 				</div>
 			</main>
 
-			<footer className="flex flex-col justify-center items-center w-full p-4 bg-[#f0f1ff] text-[#101010]">
+			<footer className="flex flex-col justify-center items-center w-full p-2 bg-[#f0f1ff] text-[#101010]">
 				<div className="flex gap-4 mb-4">
 					<a target="_blank" href="mailto:paulomariano2501@gmail.com" className="text-center" rel="noreferrer">
 						<MailIcon />
