@@ -116,6 +116,7 @@
 
   --animate-fade-slide-up: fade-slide-up 1.5s ease-out forwards;
   --animate-add-shadow: add-shadow 1.5s ease-in-out forwards;
+  --animate-add-shadow-footer: add-shadow-footer 1.5s ease-in-out forwards;
   --animate-rotate-border: rotate-border 1.5s linear infinite;
   --animate-rotate-border: border-rotate 3s linear infinite;
   --animate-fade-slide-up: fade-slide-up 1.5s ease-out forwards;
@@ -145,6 +146,19 @@
     }
     100% {
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes add-shadow-footer {
+    0% {
+      box-shadow: none; 
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    100% {
+      box-shadow: rgba(0, 0, 0, 0.1); 
       opacity: 1;
       transform: translateY(0);
     }

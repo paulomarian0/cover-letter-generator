@@ -31,7 +31,7 @@ const feedbacks = [
 
 const LandingPage = () => {
 	return (
-		<section className="flex flex-col h-screen pb-3 bg-[#f3f3f8]">
+		<section className="flex flex-col h-screen pb-3 bg-gray-50">
 			<header className="flex justify-between items-center w-full mb-1 p-4 shadow-md animate-add-shadow">
 				<span className="flex items-center">
 					<ScrollText color="#5664f5" size={45} />
@@ -39,16 +39,16 @@ const LandingPage = () => {
 				</span>
 			</header>
 
-			<main className="flex flex-col items-center justify-evenly flex-grow bg-white">
+			<main className="flex flex-col items-center justify-evenly flex-grow">
 				<div className="flex flex-col items-center w-full max-w-4xl animate-fade-slide-up">
 					<h1 className="text-4xl font-bold mb-4 text-center">
 						Create Your Perfect <span className="text-[#2500f5] font-bold">Cover Letter </span>
-						in <span className="text-[#5664f5] font-bold">Seconds</span>
+						in <span className="text-[#5664f5] font-bold animate-pulse">Seconds</span>
 					</h1>
 
 					<p className="text-xl mb-8 mt-2 text-center">
-						Upload your resume in PDF format and we'll quickly generate a professional cover letter for you, completely <span className="text-[#2500f5] font-bold text-xl animate-pulse">FREE</span>!
-						Make a lasting impression and stand out to employers.
+						Upload your resume in <span className="text-red-500 font-bold">PDF</span> format and we'll quickly generate a professional cover letter for you, completely{" "}
+						<span className="text-[#2500f5] font-bold text-xl animate-pulse">FREE</span>! Make a lasting impression and stand out to employers.
 					</p>
 
 					<Button variant="default" className="p-6 bg-[#5664f5] hover:bg-[#4b55e8] cursor-pointer text-lg text-white font-bold">
@@ -76,7 +76,7 @@ const LandingPage = () => {
 				</div>
 			</main>
 
-			<footer className="flex flex-col justify-center items-center w-full p-2 text-[#101010] animate-fade-slide-up">
+			<footer className="flex flex-col justify-center items-center w-full p-4 text-[#101010] mt-1 inset-shadow-sm inset-shadow-gray-300">
 				<div className="flex gap-4 mb-4">
 					<a target="_blank" href="mailto:paulomariano2501@gmail.com" className="text-center" rel="noreferrer">
 						<MailIcon />
@@ -89,7 +89,10 @@ const LandingPage = () => {
 					</a>
 				</div>
 				<p>
-					Made with <span className="animate-pulse duration-3000">❤️</span> by Paulo Mariano
+					Made with <span className="animate-pulse duration-3000">❤️</span> by{" "}
+					<a target="_blank" href="https://paulo-mariano.vercel.app" rel="noreferrer">
+						Paulo Mariano
+					</a>
 				</p>
 				<p className="text-center">&copy; {new Date().getFullYear()} Cover Letter Generator</p>
 			</footer>
