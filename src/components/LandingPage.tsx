@@ -31,42 +31,42 @@ const feedbacks = [
 
 const LandingPage = () => {
 	return (
-		<section className="flex flex-col h-screen pb-3 bg-gray-50">
-			<header className="flex justify-between items-center w-full mb-1 p-4 shadow-md animate-add-shadow">
+		<section className="flex flex-col min-h-screen bg-gray-50">
+			<header className="flex justify-between items-center w-full p-4 shadow-md animate-add-shadow">
 				<span className="flex items-center">
 					<ScrollText color="#5664f5" size={45} />
-					<h1 className="text-2xl font-bold ml-2">Cover Letter Generator</h1>
+					<h1 className="text-xl sm:text-2xl font-bold ml-2">Cover Letter Generator</h1>
 				</span>
 			</header>
 
-			<main className="flex flex-col items-center justify-evenly flex-grow">
+			<main className="flex flex-col items-center justify-evenly flex-grow p-4">
 				<div className="flex flex-col items-center w-full max-w-4xl animate-fade-slide-up">
-					<h1 className="text-4xl font-bold mb-4 text-center">
+					<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">
 						Create Your Perfect <span className="text-[#2500f5] font-bold">Cover Letter </span>
 						in <span className="text-[#5664f5] font-bold animate-pulse">Seconds</span>
 					</h1>
 
-					<p className="text-xl mb-8 mt-2 text-center">
+					<p className="text-base sm:text-lg md:text-xl mb-8 mt-2 text-center">
 						Upload your resume in <span className="text-red-500 font-bold">PDF</span> format and we'll quickly generate a professional cover letter for you, completely{" "}
-						<span className="text-[#2500f5] font-bold text-xl animate-pulse">FREE</span>! Make a lasting impression and stand out to employers.
+						<span className="text-[#2500f5] font-bold animate-pulse">FREE</span>! Make a lasting impression and stand out to employers.
 					</p>
 
-					<Button variant="default" className="p-6 bg-[#5664f5] hover:bg-[#4b55e8] cursor-pointer text-lg text-white font-bold">
+					<Button variant="default" className="p-4 sm:p-6 bg-[#5664f5] hover:bg-[#4b55e8] cursor-pointer text-base sm:text-lg text-white font-bold">
 						Get Started
 					</Button>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-4xl animate-fade-slide-up">
+				<div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full max-w-4xl animate-fade-slide-up p-4">
 					{feedbacks.map((feedback) => (
 						<div
 							key={feedback.id}
-							className="w-full animate-rotate-border max-w-sm transition-all rounded-xl duration-2000 linear cursor-pointer bg-conic/[from_var(--border-angle)] from-[#f3f3f8] via-[#5664f5] to-[#4b55e8] from-80% via-90% to-100% p-0.5"
+							className="w-full animate-rotate-border transition-all rounded-xl duration-2000 linear cursor-pointer bg-conic/[from_var(--border-angle)] from-[#f3f3f8] via-[#5664f5] to-[#4b55e8] from-80% via-90% to-100% p-0.5"
 						>
 							<Card className="h-full">
-								<CardContent className="flex flex-col h-full">
+								<CardContent className="flex flex-col h-full p-4">
 									<img src={feedback.avatar} alt={feedback.name} className="w-16 h-16 rounded-full mx-auto mb-4" />
-									<blockquote className="text-center pb-2 flex-grow italic">"{feedback.message}"</blockquote>
-									<p className="font-semibold text-center">
+									<blockquote className="text-sm sm:text-base text-center pb-2 flex-grow italic">"{feedback.message}"</blockquote>
+									<p className="font-semibold text-sm sm:text-base text-center">
 										- {feedback.name}, {feedback.role}
 									</p>
 								</CardContent>
@@ -88,13 +88,13 @@ const LandingPage = () => {
 						<Linkedin />
 					</a>
 				</div>
-				<p>
+				<p className="text-sm sm:text-base text-center">
 					Made with <span className="animate-pulse duration-3000">❤️</span> by{" "}
 					<a target="_blank" href="https://paulo-mariano.vercel.app" rel="noreferrer">
 						Paulo Mariano
 					</a>
 				</p>
-				<p className="text-center">&copy; {new Date().getFullYear()} Cover Letter Generator</p>
+				<p className="text-sm sm:text-base text-center">&copy; {new Date().getFullYear()} Cover Letter Generator</p>
 			</footer>
 		</section>
 	);
