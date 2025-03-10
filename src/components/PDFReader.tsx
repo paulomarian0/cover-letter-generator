@@ -68,7 +68,7 @@ const PDFReader: React.FC = () => {
 
 			reader.readAsArrayBuffer(file);
 		} else {
-			alert("Por favor, selecione um arquivo PDF.");
+			console.log("Please upload a valid PDF file.");
 		}
 	};
 
