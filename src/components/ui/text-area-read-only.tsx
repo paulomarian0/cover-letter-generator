@@ -8,7 +8,7 @@ export default function TextAreaReadOnly() {
 				defaultValue={
 					"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				}
-				className="field-sizing-content h-fit max-h-[620px] min-h-[29.5px] resize-none py-1.75 read-only:bg-muted"
+				className="field-sizing-content h-fit min-h-[29.5px] resize-none py-1.75 read-only:bg-muted"
 			/>
 		</div>
 	);

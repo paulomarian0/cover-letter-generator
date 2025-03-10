@@ -66,7 +66,7 @@ const PDFReader = () => {
 	};
 
 	return (
-		<div className="flex flex-col md:flex-row h-screen">
+		<main className="flex flex-col md:flex-row flex-grow">
 			<div className="flex-1 flex items-start justify-center p-4">
 				<div className="w-full flex flex-col border-2 shadow-lg border-gray-200 rounded-lg p-4">
 					<h2 className="text-xl font-bold mb-4">Upload Your Resume</h2>
@@ -86,7 +86,7 @@ const PDFReader = () => {
 					<CopyButton text={"TEST BROTHER"}>Copy to Clipboard</CopyButton>
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 };
 
