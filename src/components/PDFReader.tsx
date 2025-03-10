@@ -1,6 +1,9 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Component } from "react";
 import InputFile from "./ui/inputfile";
+import TextAreaReadOnly from "./ui/text-area-read-only";
+import CopyButton from "./ui/copy-button";
+import { Button } from "./ui/button";
 
 declare global {
 	interface Window {
@@ -63,9 +66,26 @@ const PDFReader = () => {
 	};
 
 	return (
-		<div className="m-auto h-screen flex justify-center items-center">
-			<InputFile handleFileChange={handleFileChange} />
-			<pre>{file}</pre>
+		<div className="flex flex-col md:flex-row h-screen">
+			<div className="flex-1 flex items-start justify-center p-4">
+				<div className="w-full flex flex-col border-2 shadow-lg border-gray-200 rounded-lg p-4">
+					<h2 className="text-xl font-bold mb-4">Upload Your Resume</h2>
+					<InputFile handleFileChange={handleFileChange} />
+					<p className="text-[#5664f5] mt-2">Attach your resume in PDF format to get started.</p>
+
+					<Button variant="default" disabled className="mt-4 bg-[#5664f5] hover:bg-[#4b55e8] text-white font-bold">
+						Generate Cover Letter
+					</Button>
+				</div>
+			</div>
+			<div className="flex-1 flex items-start h-full bg-white p-4">
+				<div className="w-full flex flex-col gap-4 border-2 shadow-lg h-full border-gray-200 rounded-lg p-4">
+					<h2 className="text-xl font-bold mb-4">Generated Cover Letter</h2>
+
+					<TextAreaReadOnly />
+					<CopyButton text={"TEST BROTHER"}>Copy to Clipboard</CopyButton>
+				</div>
+			</div>
 		</div>
 	);
 };
