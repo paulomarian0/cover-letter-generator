@@ -6,25 +6,25 @@ const feedbacks = [
 	{
 		id: 1,
 		avatar:
-			"https://media.licdn.com/dms/image/v2/C4D03AQH2lmPjZq8lTg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1649724960043?e=1747267200&v=beta&t=TEEsmbOFMh7ebpEc1t8MF-f1ar0Cj6jwvExw-8F4PPw",
-		name: "Alex Johnson",
-		role: "Marketing Specialist",
+			"https://media.licdn.com/dms/image/v2/D4D03AQHM09oqqB83bQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1685030628420?e=1747267200&v=beta&t=flHzXAUJIiu6BQrYktzUxRtYnYWkxxsYi0qY1cu8QtM",
+		name: "Vinicius Benfica",
+		role: "Full Stack Developer",
 		message: "A game changer! My cover letter has never looked so good.",
 	},
 	{
 		id: 2,
 		avatar:
-			"https://media.licdn.com/dms/image/v2/C4D03AQH2lmPjZq8lTg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1649724960043?e=1747267200&v=beta&t=TEEsmbOFMh7ebpEc1t8MF-f1ar0Cj6jwvExw-8F4PPw",
-		name: "Linda Smith",
-		role: "Software Engineer",
+			"https://media.licdn.com/dms/image/v2/D4D03AQEMiDHVKzRU6A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723989987368?e=1747267200&v=beta&t=1PFxJAIoSeFdnVKBh_NdvvEirhkmk0v88hH03akYupM",
+		name: "João Paulo Magiero",
+		role: "Marketing Specialist",
 		message: "Quick and easy! Got my dream job with the help of this app.",
 	},
 	{
 		id: 3,
 		avatar:
-			"https://media.licdn.com/dms/image/v2/C4D03AQH2lmPjZq8lTg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1649724960043?e=1747267200&v=beta&t=TEEsmbOFMh7ebpEc1t8MF-f1ar0Cj6jwvExw-8F4PPw",
-		name: "Michael Brown",
-		role: "HR Manager",
+			"https://media.licdn.com/dms/image/v2/D4D03AQFFlWpM_Tt2zg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719015705910?e=1747267200&v=beta&t=_IjeXCauh5CcaaT84xjzjlgI-d6IxCanoNu3WMVA-0o",
+		name: "Jean Malavasi",
+		role: "Software Architect",
 		message: "Highly recommend! Professional results every time.",
 	},
 ];
