@@ -1,18 +1,25 @@
 import type React from "react";
-import { useState, useEffect, Component } from "react";
+import { useState, useEffect } from "react";
 import InputFile from "./ui/inputfile";
 import TextAreaReadOnly from "./ui/text-area-read-only";
 import CopyButton from "./ui/copy-button";
-import { Button } from "./ui/button";
+import { generateText } from "ai"; // Supondo que você tenha uma função para gerar texto
+import { createGroq } from "@ai-sdk/groq";
+import ButtonWithLoading from "./ui/ButtonWithLoading";
 
+const groq = createGroq({
+	apiKey: import.meta.env.VITE_GROQ_API_KEY,
+});
 declare global {
 	interface Window {
 		pdfjsLib: any;
 	}
 }
 
-const PDFReader = () => {
+const PDFReader: React.FC = () => {
 	const [textContent, setTextContent] = useState<string>("");
+	const [coverLetter, setCoverLetter] = useState<string>("");
+	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {
 		const script = document.createElement("script");
@@ -65,6 +72,24 @@ const PDFReader = () => {
 		}
 	};
 
+	const handleGenerateCoverLetter = async () => {
+		setLoading(true);
+		try {
+			const { text } = await generateText({
+				model: groq("llama3-70b-8192"),
+				prompt: `Generate a professional and concise cover letter for a job application.
+				Don't add the initial message like "Here is a professional and concise cover letter for a job application". 
+				Mention the position, highlight relevant experience, and express interest in the role: ${textContent}`,
+			});
+
+			setCoverLetter(text);
+		} catch (error) {
+			console.error("Erro ao gerar a carta de apresentação", error);
+		} finally {
+			setLoading(false);
+		}
+	};
+
 	return (
 		<main className="flex flex-col md:flex-row flex-grow">
 			<div className="flex-1 flex items-start justify-center p-4 animate-fade-slide-up">
@@ -73,18 +98,18 @@ const PDFReader = () => {
 					<InputFile handleFileChange={handleFileChange} />
 					<p className="text-[#5664f5] mt-2">Attach your resume in PDF format to get started.</p>
 
-					<Button variant="default" disabled={!textContent} className="mt-4 bg-[#5664f5] hover:bg-[#4b55e8] text-white font-bold">
+					<ButtonWithLoading loading={loading} disabled={!textContent} onClick={handleGenerateCoverLetter}>
 						Generate Cover Letter
-					</Button>
+					</ButtonWithLoading>
 				</div>
 			</div>
 
-			<div className="flex-1 flex items-start h-full p-4 animate-fade-slide-up">
+			<div className="flex-1 flex items-start max-h-full p-4 animate-fade-slide-up">
 				<div className="w-full flex flex-col gap-4 border-2 shadow-sm h-full border-gray-200 rounded-lg p-4">
 					<h2 className="text-xl font-bold mb-4">Generated Cover Letter</h2>
 
-					<TextAreaReadOnly />
-					<CopyButton text={"TEST BROTHER"}>Copy to Clipboard</CopyButton>
+					<TextAreaReadOnly value={coverLetter} />
+					<CopyButton text={coverLetter}>Copy to Clipboard</CopyButton>
 				</div>
 			</div>
 		</main>
