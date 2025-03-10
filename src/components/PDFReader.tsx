@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import InputFile from "./ui/inputfile";
 import TextAreaReadOnly from "./ui/text-area-read-only";
 import CopyButton from "./ui/copy-button";
-import { generateText } from "ai"; // Supondo que você tenha uma função para gerar texto
+import { generateText } from "ai";
 import { createGroq } from "@ai-sdk/groq";
 import ButtonWithLoading from "./ui/ButtonWithLoading";
+import { defaultCoverLetter } from "@/constants/cover-letter";
 
 const groq = createGroq({
 	apiKey: import.meta.env.VITE_GROQ_API_KEY,
@@ -18,7 +19,7 @@ declare global {
 
 const PDFReader: React.FC = () => {
 	const [textContent, setTextContent] = useState<string>("");
-	const [coverLetter, setCoverLetter] = useState<string>("");
+	const [coverLetter, setCoverLetter] = useState<string>(defaultCoverLetter);
 	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -77,12 +78,12 @@ const PDFReader: React.FC = () => {
 		try {
 			const { text } = await generateText({
 				model: groq("llama3-70b-8192"),
-				prompt: `Generate a professional and concise cover letter for a job application.
-				Don't add the initial message like "Here is a professional and concise cover letter for a job application". 
+				prompt: `Write a cover letter directly, without any introduction, explanation, or extra text. Just the cover letter itself.  
 				Mention the position, highlight relevant experience, and express interest in the role: ${textContent}`,
 			});
+			const textWithoutIntroductionMessage = text.split(":")[1];
 
-			setCoverLetter(text);
+			setCoverLetter(textWithoutIntroductionMessage.trim());
 		} catch (error) {
 			console.error("Erro ao gerar a carta de apresentação", error);
 		} finally {
@@ -104,12 +105,17 @@ const PDFReader: React.FC = () => {
 				</div>
 			</div>
 
-			<div className="flex-1 flex items-start max-h-full p-4 animate-fade-slide-up">
-				<div className="w-full flex flex-col gap-4 border-2 shadow-sm h-full border-gray-200 rounded-lg p-4">
+			<div className="flex-1 flex flex-col max-h-[83vh] p-4 animate-fade-slide-up">
+				<div className="w-full flex flex-col gap-4 border-2 shadow-sm h-full border-gray-200 rounded-lg p-4 overflow-hidden">
 					<h2 className="text-xl font-bold mb-4">Generated Cover Letter</h2>
 
-					<TextAreaReadOnly value={coverLetter} />
-					<CopyButton text={coverLetter}>Copy to Clipboard</CopyButton>
+					<div className="flex-1 overflow-auto">
+						<TextAreaReadOnly value={coverLetter} />
+					</div>
+
+					<div className="pt-2">
+						<CopyButton text={coverLetter}>Copy to Clipboard</CopyButton>
+					</div>
 				</div>
 			</div>
 		</main>
