@@ -26,6 +26,12 @@
 			},
 			"suspicious": {
 				"noExplicitAny": "off"
+			},
+			"correctness": {
+				"noEmptyPattern": "off"
+			},
+			"style": {
+				"noNonNullAssertion": "off"
 			}
 		}
 	},

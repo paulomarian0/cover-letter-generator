@@ -1,6 +1,7 @@
 import { Linkedin, Github, MailIcon, ScrollText } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 const feedbacks = [
 	{
@@ -30,6 +31,7 @@ const feedbacks = [
 ];
 
 const LandingPage = () => {
+	const navigate = useNavigate();
 	return (
 		<section className="flex flex-col min-h-screen bg-gray-50">
 			<header className="flex justify-between items-center w-full p-4 shadow-md animate-add-shadow">
@@ -51,7 +53,7 @@ const LandingPage = () => {
 						<span className="text-[#2500f5] font-bold animate-pulse">FREE</span>! Make a lasting impression and stand out to employers.
 					</p>
 
-					<Button variant="default" className="p-4 sm:p-6 bg-[#5664f5] hover:bg-[#4b55e8] cursor-pointer text-base sm:text-lg text-white font-bold">
+					<Button variant="default" className="p-4 sm:p-6 bg-[#5664f5] hover:bg-[#4b55e8] cursor-pointer text-base sm:text-lg text-white font-bold" onClick={() => navigate("/generate-cover-letter")}>
 						Get Started
 					</Button>
 				</div>
