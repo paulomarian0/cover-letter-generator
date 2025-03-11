@@ -1,5 +1,3 @@
-import { ScrollText } from "lucide-react";
-
 const Header = () => {
 	return (
 		<header className="flex justify-between items-center w-full p-4 shadow-md animate-add-shadow">
