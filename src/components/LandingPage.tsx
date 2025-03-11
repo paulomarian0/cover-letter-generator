@@ -34,7 +34,7 @@ const LandingPage = () => {
 	return (
 		<main className="flex flex-col items-center justify-evenly flex-grow p-4">
 			<div className="flex flex-col items-center w-full max-w-4xl animate-fade-slide-up">
-				<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">
+				<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 mt-8 text-center">
 					Create Your Perfect <span className="text-[#2500f5] font-bold">Cover Letter </span>
 					in <span className="text-[#5664f5] font-bold animate-pulse">Seconds</span>
 				</h1>

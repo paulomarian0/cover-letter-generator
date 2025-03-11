@@ -5,18 +5,18 @@ const Footer = () => {
 		<footer className="flex flex-col justify-center items-center w-full pt-3 text-[#101010] mt-1 inset-shadow-sm inset-shadow-gray-300 animate-fade-slide-up">
 			<div className="flex gap-4 mb-4">
 				<a target="_blank" href="mailto:paulomariano2501@gmail.com" className="text-center" rel="noreferrer">
-					<MailIcon />
+					<MailIcon color="#5664f5" />
 				</a>
 				<a target="_blank" href="https://www.github.com/paulomarian0" className="text-center" rel="noreferrer">
-					<Github />
+					<Github color="#2b39f8" />
 				</a>
 				<a target="_blank" href="https://www.linkedin.com/in/paulomarian0/" className="text-center" rel="noreferrer">
-					<Linkedin />
+					<Linkedin color="#2500f5" />
 				</a>
 			</div>
 			<p className="text-sm sm:text-base text-center">
-				Made with <span className="animate-pulse duration-3000">❤️</span> by{" "}
-				<a target="_blank" href="https://paulo-mariano.vercel.app" rel="noreferrer">
+				Made by{" "}
+				<a target="_blank" href="https://paulo-mariano.vercel.app" rel="noreferrer" className="bg-gradient-to-r from-[#2500f5] to-[#3f4ac2] text-transparent bg-clip-text">
 					Paulo Mariano
 				</a>
 			</p>
